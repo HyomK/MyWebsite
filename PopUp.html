@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3ff222dd95.js" crossorigin="anonymous"></script>
+    <title>Popup</title>   
+
+     <link rel="stylesheet" href="css/popup.css">
+
+</head>
+<body >
+
+    <h2>Choose a song</h2>
+    <form id="addlist" action="submit"  autocomplete="off"s>
+    <input id="title" type="text" placeholder="Write Title"  minlength="1">
+    <input id ="artist" type="text" placeholder="Write Artist" minlength="1">
+    <input id="music-url" type="text" placeholder="Add Youtube url" minlength="1"s>
+    <button id="add"><i class="fas fa-plus fa-2x"></i></button>
+    </form> 
+    <ul id="music-list"></ul>
+    <script src="js/playlist.js"></script>
+   
+
+</body>
+</html>

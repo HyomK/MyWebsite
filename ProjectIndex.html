@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="page-enter" content="blendTrans(duration=0.3)">
+    <meta http-equiv="page-exit" content="blendTrans(duration=0.3)">
+    <script src="https://kit.fontawesome.com/3ff222dd95.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@600&family=Lora:wght@500&family=Vollkorn:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/block.css">
+    <link rel="stylesheet" href="css/player.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/todo.css">
+    <link rel="stylesheet" href="css/weather.css">
+    <link rel="stylesheet" href="css/bookmark.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&family=Georama:ital,wght@1,600&display=swap');
+    </style>
+    <title>MyWebsite</title>
+</head>
+<body>
+    <div id="login" value="offline"></div>
+    <div id="wrap">        
+   
+   
+        <div id="playerBar">
+        <div id="youtube">
+            <iframe width="240" height="160" 
+            src="https://www.youtube.com/embed/EtiPbWzUY9o" 
+            title="YouTube video player" 
+            frameborder="0" 
+            enablejsapi=1 
+            autoplay=1
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>        
+          </div>
+
+
+          <div id="control">
+            <div><button id="before" class="fas fas fa-backward fa-2x" ></button></div>
+            <div><button id="next" class="fas fa-forward fa-2x" ></button></div>        
+          </div>
+          
+          <div id="cd"  style="font-size: 20px;">
+            <i id="cd_icon" class="fas fa-compact-disc fa-10x"></i>
+          </div>
+            <ul id="Index" ></ul>
+           <div id="playlist">
+            <i class="fas fa-bars fa-3x"></i>
+          </div>  
+    </div>
+  
+
+
+    <div id="main-full">
+        <div id="weather">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <button id="musicMode" class="fas fa-headphones-alt fa-1x" value="off"> ON</button>
+        <button id="musicStop"  class="fas fa-pause" value="closed"></button>
+        <button id="bookmark" class="fas fa-bookmark"></button>
+        <div class="search">
+            <div id="greeting"></div>
+            <form  method=get action="http://www.google.co.kr/search" target="_blank" >   
+                <table id="search_table">     
+                    <tr>       
+                        <td id="search_form" >           
+                            <input id="Search_window"  placeholder="Google Search" type=text name=q size=25 maxlength=255 value="" /> <!-- 구글 검색 입력 창 -->           
+                            <button type=submit id="Search_btn" class="fas fa-search fa-2x"></button>      
+                        </td>     
+                    </tr>   
+                </table> 
+            </form>
+        </div>
+        
+
+
+        <div id="todo-wrap">
+            <div id="todo-list" >
+                <h4>Your schedule</h4>
+                <ul></ul>
+                <div></div>
+            </div>
+            <div id="list-wrap">
+                <div id="todo-today" class="todo">
+                    <h4>Today have to do</h4>
+                    <ul></ul>
+                </div>
+                <hr></hr>
+                <div id="todo-tomorrow" class="todo">
+                    <h4>Tomorrow have to do</h4>
+                    <ul></ul>
+                </div>
+
+
+            </div>
+            
+                
+            <h2 class='date_text' style="text-align: center; padding: 2rem 0">2021년 04월</h2>
+
+            <div class='date_item rap'>
+          
+              <div class="grid date_form date_head">
+                <div>SUN</div>
+                <div>MON</div>
+                <div>TUE</div>
+                <div>WED</div>
+                <div>THU</div>
+                <div>FRI</div>
+                <div>SAT</div>
+              </div>
+          
+              <div class="grid date_form dateSel"></div>
+     
+            </div>
+           
+        </div>
+        <div id="clock"></div>
+            
+        <div id="todo_icon" class="fas fa-chevron-up fa-2x" value="fold"></div>
+    </div>
+    <div id="bookmarkBar">
+        <h3>Bookmark</h3>
+        <ul></ul>
+        <form action="submit">
+            <input id="titleInput" type="text" placeholder="Title">
+            <input id="urlInput"  type="text" placeholder="URL Link (www...)">
+            <input id="submitBK" type="button" name="go" value="Submit" />
+        </form>
+        <button id="BKplus" class="fas fa-plus"></button>
+   
+    </div>
+
+    <script src="js/music.js"></script>
+    <script src="js/greeting.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/bookmark.js"></script>
+    <script src="js/todo.js"></script>
+</div>
+</body>
+</html>
