@@ -1,0 +1,81 @@
+
+a{
+    text-decoration: none;
+    text-decoration-line : none;
+    color:white;
+    font-size: 20px;
+
+}
+a:hover{
+    color:#61524b;
+}
+
+#bookmarkBar{
+    padding-top: 30px;
+    position:relative;
+    float:right;
+    width:10%;
+    height: 80%;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    background-color:#c8d980;
+
+    
+}
+#bookmarkBar h3{
+    font-size: 1.5em;
+    color:linen;
+}
+#bookmarkBar ul{
+    height: 60%;
+ 
+    list-style:none;
+    text-align: left;
+    margin: 30px 0px;
+    
+}
+#bookmarkBar li{
+    margin: 10px 0px;
+    margin-left: 20px;;
+    
+ 
+}
+#bookmark{
+    background: none;
+    border: none;
+    font-size: 40px;
+    color:#cbd2dc;
+    float:right;
+    margin-right: 20px;
+}
+.folded{
+    color:#8b506a !important;
+
+}
+
+#bookmarkBar input{
+    width:150px;
+    height:25px;
+    border:none;
+    border-radius: 10px;
+    margin:5px;
+    padding-left: 10px;
+  
+}
+#BKplus{
+    position:absolute;
+    left:10%;
+    bottom:30px;
+    background: linen;
+    color:#af8cb6;
+    border: none;
+    font-size: 30px;
+    width:80%;
+    border-radius: 20px;
+    
+}
+#bookmarkBar li:hover{
+    font-weight: bold;
+
+    font-size: 1.2em;
+}
