@@ -1,0 +1,89 @@
+#playerBar{
+    float:left;
+    width:20%;
+    text-align: center;
+    margin-right:10px;
+    margin: 20px;
+    background-color: #fdc98d;
+    border-radius: 20px;
+    position:relative;
+}
+
+
+
+#playerBar iframe{
+    width:80%;
+    margin: 50px auto;
+    margin-top: 50px;
+    border: none;
+}
+#cd{
+    height:350px;
+    margin-bottom: 10px;
+    padding-top: 0;
+    overflow: hidden;
+
+}
+
+#cd i{
+    margin-top: 60px;
+    display:block;
+}
+
+#playlist{
+    position: absolute;
+    bottom: 7px;
+    left: 7px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+
+}
+
+#Index{
+    width:60%;
+    margin:0 auto;
+    padding:20px 40px;
+    height: 40%;
+    border-radius: 10px;
+    background-color: beige;
+    
+}
+#Index li{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height:20px;
+    margin:10px 20px;   
+    text-align: left;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+}
+#control{
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap:20px;
+
+}
+#next{
+  
+    background: none;
+    border: none;
+
+   
+}
+#before{
+
+    background: none;
+    border: none;  
+    
+}
+#musicMode{
+    border:none;
+    background-color:#fdc98d;
+    color:#4b363d;
+}
+#musicStop{
+    color:#fdc98d;
+}
