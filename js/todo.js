@@ -93,9 +93,19 @@ function update(){
     }
     todayTodo();
     tomorrowTodo();
+    
 }
 
-
+function coloring(date,option){
+    for(let item=0;item<dateSelected.length;item++){             
+        if(String(date)===dateSelected[item].innerHTML){
+          if(option) dateSelected[item].classList.add("schedule");
+          else  dateSelected[item].classList.remove("schedule");       
+        } 
+                     
+              
+    }
+}
 
 function paintTodo(obj){
     const Todolist=document.querySelector("#todo-list");
@@ -139,9 +149,27 @@ function addTodo(event){
         TodoList.push(obj);
         savedTodo();
         update();
+        coloring(obj.date,true);
      }
 }
 
+
+function delteTodo(event){
+    event.preventDefault();
+    const answer=confirm("Do you want to really delete this schedule?");
+   if(answer){
+    const item=event.target.parentElement;
+    const id=item.id;
+    TodoList=TodoList.filter(e=>String(e.id)!==String(id));
+    item.remove();
+    savedTodo();
+    update();
+    const date=String(item.querySelector('span').innerHTML);
+    const day_index=date.indexOf("/");
+    const day=date.substr(day_index+1,date.length);
+    coloring(parseInt(day),false);
+    }
+ }
 
 function savedTodo(){
     localStorage.setItem(Todo_KEY,JSON.stringify(TodoList));    
@@ -235,17 +263,4 @@ function setCalender(Tday){
 window.onload =setCalender(Tday);
  function filtDate(item){
     return item.className==="dateSel";
- }
-
- function delteTodo(event){
-    event.preventDefault();
-    const answer=confirm("Do you want to really delete this schedule?");
-   if(answer){
-    const item=event.target.parentElement;
-    const id=item.id;
-    TodoList=TodoList.filter(e=>String(e.id)!==String(id));
-    item.remove();
-    savedTodo();
-    update();
-    }
  }

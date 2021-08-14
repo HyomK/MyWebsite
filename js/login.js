@@ -3,7 +3,8 @@ const UserInput=document.querySelector("#Welcome-login input");
 const UserForm=document.querySelector("#Welcome-login");
 const logout=document.querySelector("#out");
 const USERNAME_KEY="user";
-const MainPage="./Projectindex.html";
+const NowPage=window.location.href;
+const MainPage=String(NowPage).substr(0,String(NowPage).indexOf("login"))+"ProjectIndex.html";
 const directBtn=document.getElementById("loginbtn");
 
 
