@@ -1,8 +1,7 @@
 *{
     margin:0px;
     padding:0px;
-
-   
+  
 }
 
 body{
@@ -24,6 +23,10 @@ h2{
    line-height: 100px;
    font-weight: bold;
    font-size: 2em;
+   font-family: 'Domine', serif;
+   font-family: 'Georama', sans-serif
+
+  
 
 
 }
@@ -86,7 +89,9 @@ li{
     margin-left: 40px;
     margin-right: 40px;
     font-size: 20px;
-    font-family: 'Jua', sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Noto Serif KR', serif;
+
 }
 span{
     margin-right: 5px;
@@ -103,4 +108,15 @@ hr {
     float:right;
     margin-right: 20px;
     margin-left:10px;
+}
+.ctrl2:hover{
+    color:  black;
+    
+}
+.ctrl2{
+    font-size: 25px;
+}
+#music-list{
+    width:80%;
+    margin:0 auto;
 }

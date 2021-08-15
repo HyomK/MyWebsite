@@ -50,12 +50,18 @@
     
 }
 #Index li{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
     height:20px;
     margin:10px 20px;   
     text-align: left;
     font-family: 'Noto Serif KR', serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 14px;
+}
+#Index li:hover{
+ 
+    font-weight: bold;
+    font-size:1.05em;
 }
 #control{
     height: 50px;
@@ -70,11 +76,9 @@
   
     background: none;
     border: none;
-
-   
+  
 }
 #before{
-
     background: none;
     border: none;  
     
@@ -86,4 +90,15 @@
 }
 #musicStop{
     color:#fdc98d;
+}
+.NOW{
+    font-weight: bold;
+    color: #f28482;
+}
+.ctrl:hover{
+    color:beige;
+}
+
+.ctrl2:hover{
+ color:#506a8b;
 }

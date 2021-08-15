@@ -72,6 +72,21 @@ body{
     font-size: 30px;
     color: #f2d8b3;
 }
+#cover{
+    width:80%;
+    height:160px;
+    margin: 50px auto;
+    margin-top: 50px;
+    border: none;
+    color:white;
+    text-align: center;
+    line-height: 130px;
+    font-size:25px;
+    background-color: black;
+    font-family: 'Domine', serif;
+    font-family: 'Georama', sans-serif
+   
+}
 
 .fade-in-box {
  

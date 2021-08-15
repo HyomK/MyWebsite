@@ -9,13 +9,28 @@ const list=document.querySelector("#Index");
 const PLAYLIST_KEY="playlist";
 let MusicList=[];
 let saved=[];
-saved.fill(MusicList,0,MusicList.length);
+let PlayNow=null;
+
+const Before=document.querySelector("#before");
+Before.addEventListener("click",musicBefore);
+const Next=document.querySelector("#next");
+Next.addEventListener("click",musicNext);
+
+
+// saved.fill(MusicList,0,MusicList.length);
 const HIDDEN_CLASSNAME = "hidden";
 const Full_CLASSNAME="main-full";
+
 musicBar.classList.add(HIDDEN_CLASSNAME);
 btn.addEventListener("click",MusicMode);
 Modebtn.addEventListener("click",musicHandler);
 list_icon.addEventListener("click",list_pop);
+list.classList.add(HIDDEN_CLASSNAME);
+cd_icon.addEventListener("click",ShowList);
+list.addEventListener("click",HideList);
+
+
+
 setInterval(Spin,80);
 
 
@@ -32,6 +47,37 @@ function musicHandler(){
     iframe.src=iframe.src;
 }
 
+function musicBefore(){
+    const iframe=musicBar.querySelector('iframe');
+    const src=iframe.src;
+    for(let i=0; i<MusicList.length;i++){
+        if(MusicList[i].url===src){
+            if(i==0){
+                iframe.src=MusicList[MusicList.length-1].url;
+            }else{
+                iframe.src=MusicList[i-1].url;
+            }
+            break;
+        }
+    }
+    NowColoring( iframe.src);   
+}
+
+function musicNext(){
+    const iframe=musicBar.querySelector('iframe');
+    const src=iframe.src;
+    for(let i=0; i<MusicList.length;i++){
+        if(MusicList[i].url===src){
+            if(i==MusicList.length-1){
+                iframe.src=MusicList[0].url;
+            }else{
+                iframe.src=MusicList[i+1].url;
+            }
+            break;
+        }
+    }
+    NowColoring( iframe.src);
+}
 
 function MusicMode(){
     if(btn.value==="off"){
@@ -39,6 +85,9 @@ function MusicMode(){
         musicBar.classList.remove(HIDDEN_CLASSNAME);
         mainBar.id="main";
         btn.innerHTML=" OFF";
+        ShowList();
+        YoutubeConnect();
+       
     }else{   
         btn.value="off";
         btn.innerHTML=" ON";
@@ -55,14 +104,33 @@ function Spin(){
 }
 
 
-function YoutubeConnect(url){
-    Youtube.querySelector('iframe').src=url;
+function YoutubeConnect(){
+    const savedList=localStorage.getItem(PLAYLIST_KEY);
+    const parsedList=JSON.parse(savedList);
+    const video=Youtube.querySelector('iframe');  
+    const cover=Youtube.querySelector('#cover'); 
+    
+    if(parsedList==null ||parsedList.length==0){
+      video.classList.add(HIDDEN_CLASSNAME);
+      cover.classList.remove(HIDDEN_CLASSNAME);   
+      
+    }else{
+        video.classList.remove(HIDDEN_CLASSNAME);
+        cover.classList.add(HIDDEN_CLASSNAME);
+        loadList(); 
+        Youtube.querySelector('iframe').src=MusicList[0].url;
+        PlayNow=MusicList[0].url;
+        document.querySelector("#Index li").classList.add("NOW");
+           
+    }
 }
 
 function ShowList(){
-    loadList();
+   
     cd_icon.classList.add(HIDDEN_CLASSNAME);
     list.classList.remove(HIDDEN_CLASSNAME);
+    loadList();
+  
       
 }
 
@@ -78,13 +146,36 @@ function paintList(obj){
     listIndex.addEventListener("click",PlayStart);
     listIndex.addEventListener("contextmenu",deleteList);
     list.appendChild(listIndex);
-    
+   
 }
+
+function NowColoring(item_url){
+    const list=document.querySelector("#Index");
+    const li=list.querySelectorAll('li');
+    let now;
+    for(let i=0;i<li.length;i++){
+        if(String(li[i].id)===PlayNow){
+            const before=li[i].classList.remove("NOW");
+        }else if(String(li[i].id)===item_url){
+            now=li[i];
+        }
+    }
+    now.classList.add("NOW");
+    PlayNow=now.id;
+}
+
 
 function PlayStart(event){
     const item=event.target;
-    console.log(item.id);
-    Youtube.querySelector("iframe").src=item.id;
+    try{
+        Youtube.querySelector("iframe").src=item.id;
+        NowColoring(item.id);
+        video.classList.remove(HIDDEN_CLASSNAME);
+        cover.classList.add(HIDDEN_CLASSNAME);
+      
+    }catch(error){
+        console.alert("ERROR URL!");
+    }
 }
 
 function loadList(){
@@ -99,9 +190,10 @@ function loadList(){
         const old=list.querySelectorAll('li');
         old.forEach(item=>item.remove());
         MusicList.forEach((item)=>paintList(item));
+  
     }
-    saved=MusicList; 
-
+    saved=MusicList;
+  
 }
 
 function deleteList(event){
@@ -114,10 +206,7 @@ function deleteList(event){
     MusicList=MusicList.filter(e=>e.url!==id);
     item.remove();
     localStorage.setItem(PLAYLIST_KEY,JSON.stringify(MusicList)); 
+    YoutubeConnect();
     }
 }
-
-list.classList.add(HIDDEN_CLASSNAME);
-cd_icon.addEventListener("click",ShowList);
-list.addEventListener("click",HideList);
 

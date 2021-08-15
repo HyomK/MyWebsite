@@ -9,7 +9,9 @@ let MusicStorage=[];
 let MusicList=[];
 const savedPlayer=localStorage.getItem(PLAYER_KEY);
 const savedList=localStorage.getItem(PLAYLIST_KEY);
+const url_text=document.querySelector("#music-url");
 
+url_text.addEventListener("click",function(){alert("Youtube 공유하기 > 퍼가기 > Link 모두 복사\n퍼가기가 허용된 동영상만 가능합니다 :)");});
 
 if(savedPlayer===null)
     localStorage.setItem(PLAYER_KEY,MusicStorage);
@@ -79,10 +81,10 @@ function setList(obj){
         const deleteBtn=document.createElement('i');
         const addBtn=document.createElement('i');
         const line=document.createElement('hr');
-        deleteBtn.className="fas fa-minus-circle";
+        deleteBtn.className="fas fa-minus-circle ctrl2";
         deleteBtn.id="deleteBtn";
         deleteBtn.addEventListener("click",deleteItem);
-        addBtn.className="fas fa-plus-circle";
+        addBtn.className="fas fa-plus-circle ctrl2";
         addBtn.style.float="right"; addBtn.style.marginLeft="10px";
         addBtn.addEventListener("click",addMusic);    
         newlist.id=obj.id;    
@@ -100,6 +102,8 @@ function setList(obj){
 }
 function addItem(event){
     event.preventDefault();
+    console.log(val[2].value);
+    val[2].value=URLfilter(val[2].value);
     if(CheckBox()){
         console.log("val",val);
         const newObj={
@@ -113,6 +117,13 @@ function addItem(event){
         setList(newObj);
     }
 }
+function URLfilter(url){
+    const start=String(url).indexOf("src=")+5;
+    const end=String(url).indexOf("\"",start);
+    const src=String(url).substr(start,end-start);
+    console.log(src);
+    return src;
+}
 
 function savedItem(){
     localStorage.setItem(PLAYER_KEY,JSON.stringify(MusicStorage));
@@ -124,5 +135,6 @@ function savedMusicList(){
 console.log(addForm);
 
 addForm.addEventListener("submit",addItem);
+setInterval(1000,savedMusicList);
 
 
