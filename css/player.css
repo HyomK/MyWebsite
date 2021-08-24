@@ -142,9 +142,10 @@
     }
 
     #Index{
+        
         width:65%;
         margin:0 auto;
-        height: 45%;
+        height: 40%;
         border-radius: 10px;
         background-color: beige;
         padding-top: 10px;
