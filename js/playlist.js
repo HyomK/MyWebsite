@@ -20,6 +20,7 @@ else{
     MusicStorage=parsedPlayer;
     MusicStorage.forEach(item=>setList(item));
 }    
+addBtn.addEventListener("click", addItem);
 
 
 function addMusic(event){
@@ -47,6 +48,7 @@ function addMusic(event){
             savedMusicList();
         }
     })
+   
 
 }
 
@@ -57,7 +59,7 @@ function CheckBox(){
     for(let i=0; i<val.length;i++){
         if(val[i].value===""){
             success=false;
-            alert("check your box");
+            alert(i+"check your box");
             return false;
         }
     }
@@ -101,9 +103,10 @@ function setList(obj){
     
 }
 function addItem(event){
-    event.preventDefault();
-    console.log(val[2].value);
+   // event.preventDefault();
+   
     val[2].value=URLfilter(val[2].value);
+    console.log(val[0].value,val[1].value,val[2].value);
     if(CheckBox()){
         console.log("val",val);
         const newObj={
@@ -132,9 +135,6 @@ function savedItem(){
 function savedMusicList(){    
         localStorage.setItem(PLAYLIST_KEY,JSON.stringify(MusicList)); 
 }
-console.log(addForm);
 
-addForm.addEventListener("submit",addItem);
 setInterval(1000,savedMusicList);
-
 
