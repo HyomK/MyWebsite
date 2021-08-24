@@ -1,39 +1,123 @@
+@media(max-width:1500px){
+    a{
+        text-decoration: none;
+        text-decoration-line : none;
+        color:white;
+        font-size: 15px;
+    
+    }
+    #bookmarkBar{
+        padding-top: 10px;
+        position:relative;
+        float:right;
+        width:10%;
+        height: 80%;
+        text-align: center;
+        border-bottom-left-radius: 20px;
+        background-color:#c8d980;
+    
+        
+    }
+    #bookmarkBar h3{
+        font-size: 1.1em;
+        color:linen;
+    }
 
-a{
-    text-decoration: none;
-    text-decoration-line : none;
-    color:white;
-    font-size: 20px;
-
+    #bookmarkBar ul{
+        height: 45%; 
+        list-style:none;
+        text-align: left;
+        margin: 20px 0px;
+        
+    }
+    #bookmarkBar li{
+        margin: 10px 0px;
+        text-align: left;
+        
+     
+    }
+    #bookmark{
+        background: none;
+        border: none;
+        font-size: 30px;
+        color:#cbd2dc;
+        float:right;
+        margin-right: 20px;
+    }
+    .folded{
+        color:#8b506a !important;
+    
+    }
+    
+    #bookmarkBar input{
+       
+        
+        max-width:75%;
+        height:20px;
+        border:none;
+        border-radius: 10px;
+        margin:5px;
+        padding-left: 10px;
+      
+    }
+    #BKplus{
+        position:absolute;
+        left:10%;
+        bottom:20px;
+        background: linen;
+        color:#af8cb6;
+        border: none;
+        font-size: 20px;
+        width:80%;
+        border-radius: 20px;
+        
+    }
+    #bookmarkBar li:hover{
+        font-weight: bold; 
+        font-size: 0.9em;
+    }
 }
-a:hover{
-    color:#61524b;
-}
 
-#bookmarkBar{
-    padding-top: 30px;
-    position:relative;
-    float:right;
-    width:10%;
-    height: 80%;
-    text-align: center;
-    border-bottom-left-radius: 20px;
-    background-color:#c8d980;
+
+
+
+
+
+@media(min-width:1500px){
+    a{
+        text-decoration: none;
+        text-decoration-line : none;
+        color:white;
+        font-size: 20px;
+    
+    }
+    #bookmarkBar{
+        padding-top: 30px;
+        position:relative;
+        float:right;
+        width:10%;
+        height: 80%;
+        text-align: center;
+        border-bottom-left-radius: 20px;
+        background-color:#c8d980;
+    
+        
+    }
+    #bookmarkBar h3{
+        font-size: 1.5em;
+        color:linen;
+    }
+
+    #bookmarkBar ul{
+        height: 60%;
+     
+        list-style:none;
+        text-align: left;
+        margin: 30px 0px;
+        
+    }
 
     
-}
-#bookmarkBar h3{
-    font-size: 1.5em;
-    color:linen;
-}
-#bookmarkBar ul{
-    height: 60%;
- 
-    list-style:none;
-    text-align: left;
-    margin: 30px 0px;
-    
-}
 #bookmarkBar li{
     margin: 10px 0px;
     margin-left: 20px;;
@@ -79,3 +163,11 @@ a:hover{
 
     font-size: 1.2em;
 }
+}
+
+a:hover{
+    color:#61524b;
+}
+
+
+

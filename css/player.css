@@ -1,77 +1,175 @@
-#playerBar{
-    float:left;
-    width:20%;
-    text-align: center;
-    margin-right:10px;
-    margin: 20px;
-    background-color: #fdc98d;
-    border-radius: 20px;
-    position:relative;
+
+
+@media(min-width:1500px){
+    #playerBar{
+        float:left;
+        width:20%;
+        text-align: center;
+        margin-right:10px;
+        margin: 20px;
+        background-color: #fdc98d;
+        border-radius: 20px;
+        position:relative;
+    }
+
+    
+    #playerBar iframe{
+        width:80%;
+        margin: 50px auto;
+        margin-top: 50px;
+        border: none;
+    }
+    #cd{
+        height:350px;
+        margin-bottom: 10px;
+        padding-top: 0;
+        overflow: hidden;
+    
+    }
+    
+    #cd i{
+        margin-top: 60px;
+        display:block;
+    }
+
+    #control{
+        height: 50px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        gap:20px;
+    
+    }
+    #Index li{
+   
+        height:20px;
+        margin:10px 20px;   
+        text-align: left;
+        font-family: 'Noto Serif KR', serif;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
+
+    
+    #playlist{
+        position: absolute;
+        bottom: 7px;
+        left: 7px;
+        margin-left: 30px;
+        margin-bottom: 30px;
+        text-align: left;
+
+    }
+    #Index{
+        width:60%;
+        margin:0 auto;
+        padding:20px 40px;
+        height: 45%;
+        border-radius: 10px;
+        background-color: beige;
+        
+    }
+    #Index li:hover{
+    
+        font-weight: bold;
+        font-size:1.05em;
+    }
+  
 }
 
+@media(max-width:1500px){
+    #playerBar{
+        float:left;
+        width:18%;
+        text-align: center;
+        margin-right:10px;
+        margin: 15px;
+        background-color: #fdc98d;
+        border-radius: 20px;
+        position:relative;
+    }
 
+    
+    #playerBar iframe{
+        width:80%;
+        margin: 40px auto;
+        margin-top: 40px;
+        border: none;
+    }
+    #cd{
+        height:250px;
+        margin-bottom: 10px;
+        padding-top: 0;
+        overflow: hidden;
+    
+    }
+    
+    #cd i{
+        margin-top: 30px;
+        display:block;
+        font-size: 6em;;
+    }
+    #control{
+        height: 30px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        gap:20px;
+        font-size: 0.8em;
+    }
+  
+    #Index li{
+        height:20px;
+        margin:10px 10px;   
+        text-align: left;
+        font-family: 'Noto Serif KR', serif;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 12px;
+    }
 
-#playerBar iframe{
-    width:80%;
-    margin: 50px auto;
-    margin-top: 50px;
-    border: none;
-}
-#cd{
-    height:350px;
-    margin-bottom: 10px;
-    padding-top: 0;
-    overflow: hidden;
+    
+    #playlist{
+        position: absolute;
+        bottom: 3px;
+        left: 3px;
+        margin-left: 12px;
+        margin-bottom: 12px;
+        text-align: left;
+        font-size: 0.7em;
 
-}
+    }
 
-#cd i{
-    margin-top: 60px;
-    display:block;
-}
+    #Index{
+        width:65%;
+        margin:0 auto;
+        height: 45%;
+        border-radius: 10px;
+        background-color: beige;
+        padding-top: 10px;
+    }
 
-#playlist{
-    position: absolute;
-    bottom: 7px;
-    left: 7px;
-    margin-left: 30px;
-    margin-bottom: 30px;
-    text-align: left;
-
-}
-
-#Index{
-    width:60%;
-    margin:0 auto;
-    padding:20px 40px;
-    height: 40%;
-    border-radius: 10px;
-    background-color: beige;
+    #Index li:hover{
+    
+        font-weight: bold;
+        font-size:0.9em;
+    }
     
 }
-#Index li{
-   
-    height:20px;
-    margin:10px 20px;   
-    text-align: left;
-    font-family: 'Noto Serif KR', serif;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 14px;
-}
-#Index li:hover{
- 
-    font-weight: bold;
-    font-size:1.05em;
-}
-#control{
-    height: 50px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    gap:20px;
 
+#playlist i:hover{
+    color:tomato;
 }
+
+
+
+
+
+
+
+
+
 #next{
   
     background: none;

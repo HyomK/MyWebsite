@@ -8,6 +8,58 @@ body{
     display:none;
 
 }
+@media(max-width:1500px){
+    #greeting{
+        padding-top: 20px;
+        margin-bottom: 40px;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        font-family: 'Domine', serif;
+        font-family: 'Georama', sans-serif
+    }
+
+    
+    #clock{
+        position: absolute;
+        bottom: 10px;
+        right: 30px;
+        border: none;
+        font-size: 50px;
+        font-weight: bold;  
+        font-family: 'Lora', serif;
+        color:white;
+    }
+    
+
+}
+@media(min-width:1500px){
+    #greeting{
+        padding-top: 50px;
+        margin-bottom: 80px;
+        font-size: 70px;
+        font-weight: bold;
+        text-align: center;
+        font-family: 'Domine', serif;
+        font-family: 'Georama', sans-serif
+    }
+
+    #clock{
+        position: absolute;
+        bottom: 10px;
+        right: 30px;
+    
+        border: none;
+        font-size: 80px;
+        font-weight: bold;  
+        font-family: 'Lora', serif;
+        color:white;
+    
+    }
+}
+
+
+
 #wrap{
     overflow: hidden;
     width:100vw;
@@ -36,27 +88,8 @@ body{
     height: 80%;
 }
 
-#clock{
-    position: absolute;
-    bottom: 10px;
-    right: 30px;
 
-    border: none;
-    font-size: 80px;
-    font-weight: bold;  
-    font-family: 'Lora', serif;
-    color:white;
 
-}
-#greeting{
-    padding-top: 50px;
-    margin-bottom: 80px;
-    font-size: 70px;
-    font-weight: bold;
-    text-align: center;
-    font-family: 'Domine', serif;
-    font-family: 'Georama', sans-serif
-}
 
 #musicMode{
     padding:10px;

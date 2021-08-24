@@ -1,13 +1,33 @@
-.search{
-    background-color: 0XFFFFFF;
-    margin:20px 20px;
-    max-height: 40%;
-    color: white;
-    padding-top: 90px;
-   
-
-
+@media(max-width:1500px){
+    .search{
+        background-color: 0XFFFFFF;
+        margin:10px 10px;
+        max-height: 40%;
+        color: white;
+        padding-top: 20px;
+       
+    
+    
+    }
 }
+
+
+
+@media(min-width:1500px){
+    .search{
+        background-color: 0XFFFFFF;
+        margin:20px 20px;
+        max-height: 40%;
+        color: white;
+        padding-top: 90px;
+       
+    
+    
+    }
+}
+
+
+
 #search_table{
     height:50px;
     margin:0 auto;
