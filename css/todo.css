@@ -39,6 +39,7 @@
         margin: 7px auto;
         font-family: 'Noto Serif KR', serif;
         font-size: 14px;
+        margin-left: 20px !important;
     
         
     }
@@ -97,7 +98,8 @@
       }
   
      
-     .todo label{   
+     .todo label{
+         margin-left:10px;   
          margin-right:0px;
          font-size: 14px;
      
@@ -122,6 +124,11 @@
     border-radius: 20px;
     margin:0px 10px;
  }
+ .container input {
+    float:right !important;
+    margin-right: 30px !important;
+    zoom:1 !important;
+}
     
 }
 
@@ -170,6 +177,7 @@
         margin: 7px auto;
         font-family: 'Noto Serif KR', serif;
         font-size: 12px;
+
      
         
     }
@@ -199,7 +207,8 @@
         margin-right: 0px;
     }
     
-     .todo label{   
+     .todo label{ 
+ 
          margin-right:0px;
          font-size: 12px;
      
